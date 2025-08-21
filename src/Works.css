@@ -1,0 +1,49 @@
+.works_div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  background: transparent; /* Ensure no background obscures body */
+}
+
+.tech_title {
+  font-size: 24px;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.works_column {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: transparent; /* Ensure no background obscures body */
+}
+
+.card_container {
+  position: relative;
+  width: 70%; /* Larger than WorksSection’s 60% */
+  height: 48vw; /* Larger than WorksSection’s 36vw */
+  margin-bottom: 100px; /* Increased for spacing */
+  background: transparent; /* Ensure no background obscures body */
+}
+
+#all-projects {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+#all-projects:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 780px) {
+  .card_container {
+    width: 90%; /* Even wider on mobile */
+    height: 60vw; /* Adjusted for mobile */
+  }
+}

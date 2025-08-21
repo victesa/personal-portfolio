@@ -1,0 +1,59 @@
+/* The carousel container */
+.carousel-container {
+    width: 100%;           
+    overflow: hidden;      
+    position: relative;    
+    margin-top: 40px;
+  }
+  
+  /* Add the subtle dark gradient overlay to the edges */
+  .carousel-container::before,
+  .carousel-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 8%;               /* Adjust this value to control the width of the tint */
+    z-index: 2;              /* Ensure it appears above the carousel content */
+  }
+  
+  .carousel-container::before {
+    left: 0;                             /* Left edge */
+    background: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0)); /* Fade left */
+  }
+  
+  .carousel-container::after {
+    right: 0;                            /* Right edge */
+    background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0)); /* Fade right */
+  }
+  
+  /* The actual carousel (the items inside) */
+  .carousel {
+    display: flex;           /* Display items horizontally */
+    animation: slideLeft 20s linear infinite;  /* Infinite sliding animation */
+  }
+  
+  /* Individual items in the carousel */
+  .carousel-item img {
+    width: 200px;
+    height: auto;
+    margin: 10px;
+    border-radius: 20px;
+  }
+  
+  /* Keyframe for endless sliding to the left */
+  @keyframes slideLeft {
+    0% {
+      transform: translateX(100%); /* Start at the initial position */
+    }
+    100% {
+      transform: translateX(-250%); /* Slide to the left by 250% of the total width */
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .carousel-container {
+      display: none; /* Hide the carousel on larger screens (optional) */
+    }
+  }
+  

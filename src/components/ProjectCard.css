@@ -1,0 +1,109 @@
+.back_card {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: calc(100% + 10px);
+  height: calc(100% + 10px);
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 24px;
+  backdrop-filter: blur(12px);
+  z-index: 0;
+  overflow: hidden;
+}
+
+.single_component {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #1E1E1E, #0a0a0a);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  transition: background 0.4s ease;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: white;
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.1) inset,
+    0 4px 30px rgba(0,0,0,0.2);
+  border-top: 4px solid transparent;
+  border-image-slice: 1;
+  border-image-repeat: stretch;
+}
+
+.details_div {
+  width: 95%;
+  flex: 0 0 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+  box-sizing: border-box;
+  z-index: 2;
+}
+
+.top_div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.top_div h2,
+.top_div p {
+  margin: 0;
+  color: white;
+}
+
+.project_description {
+  color: white;
+  margin: 0;
+}
+
+.highlighted {
+  color: #7A7A7A;
+  font-weight: bold;
+}
+
+.works_image {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.works_image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+.reflection_overlay {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(255,255,255,0) 40%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0) 60%);
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
+  z-index: 2;
+}
+
+.single_component.hovered_static .reflection_overlay {
+  opacity: 1;
+  transform: translateX(100%);
+}
+
+.static_hover_image {
+  transition: transform 0.4s ease;
+  transform: translateY(-8px);
+}

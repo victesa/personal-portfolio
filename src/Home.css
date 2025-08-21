@@ -1,0 +1,379 @@
+/* === General Layout === */
+#home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin-top: 160px;
+  background-color: #0D0D0D;
+}
+
+#spacer {
+  height: 2vw;
+}
+
+/* === Title Styling === */
+#title_div h1 {
+  font-family: 'Poppins';
+  background: linear-gradient(90deg, #88887E, #C6C6BD, #F7F7EF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  font-size: 70px;
+  font-weight: 500;
+  letter-spacing: -1px;
+  margin: 5px;
+  padding: 0;
+  text-align: center;
+  animation: zoomIn 1s ease-out forwards;
+}
+
+@media (max-width: 920px) {
+  #title_div h1 {
+    font-size: 60px;
+  }
+}
+
+@media (max-width: 1200px) {
+  #title_div h1 {
+    font-size: 65px;
+  }
+}
+
+@media (max-width: 800px) {
+  #title_div h1 {
+    font-size: 55px;
+  }
+}
+
+@media (max-width: 768px) {
+  #title_div h1{
+    font-size: 40px;
+  }
+
+  #line_break{
+    display: none;
+  }
+  
+}
+
+
+/* === Subtitle Section === */
+#subtitle_div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 90%;
+}
+
+#subtitle {
+  width: 70%;
+  color: #7D7F78;
+  font-family: 'Inter';
+  font-size: 16px;
+  text-align: center;
+  line-height: 1.6;
+  word-wrap: break-word;
+  animation: zoomIn 1s ease-out forwards;
+}
+
+#subtitle_center_div{ 
+  width: 50vw;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+/* === Buttons === */
+#btn-works {
+  background-color: #D0FF00;
+  color: black;
+  font-family: 'Inter';
+  font-weight: 800;
+  border-radius: 40px;
+  padding: 10px 30px;
+  font-size: 20px;
+  border: 1px solid #D0FF00;
+  animation: zoomIn 1s ease-out forwards;
+}
+
+@media (max-width: 800px) {
+  #btn-works{
+    padding: 7px 20px;
+    font-size: 16px;
+  }
+}
+@media (max-width: 920px) {
+  #subtitle {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  #subtitle{
+    width: 100%;
+  }
+  
+  #subtitle_center_div{
+    width: 70%;
+  }
+}
+
+
+
+/* === Image Divs === */
+#left-div-image,
+#right-div-image {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 25vw;
+}
+
+#right-div-image {
+  align-items: start;
+}
+
+#phone,
+#watch {
+  width: 14vw;
+  height: auto;
+  border-radius: 10px;
+  animation: slideUp 1s ease-out;
+}
+
+#sarah-name-pic,
+#eliah-name-pic {
+  width: 5vw;
+  animation: slideLeftIn 1s ease-out forwards;
+}
+
+#eliah-name-pic {
+  animation: slideRightIn 1s ease-out forwards;
+}
+
+/* === Bottom Image Section === */
+#bottom-images-div {
+  margin-top: 60px;
+  width: 100%;
+  display: flex;
+  align-items: start;
+  justify-content: space-around;
+}
+
+#dashboard-pic,
+#credentials-pic,
+#finance-pic {
+  width: 20vw;
+  height: auto;
+  border-radius: 15px;
+  animation: slideUp 1s ease-out;
+}
+
+.image-wrapper {
+  position: relative;
+  width: 250px;
+  margin-top: 20px;
+  overflow: hidden;
+  border-radius: 15px;
+  display: inline-block;
+  transition: transform 0.3s ease-out;
+}
+
+.image-wrapper::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+  pointer-events: none;
+}
+
+
+.scroll-fade-up {
+  transform: translateY(20px);
+  opacity: 0;
+  transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+  will-change: transform, opacity;
+}
+
+.scroll-fade-up.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+
+/* === Animations === */
+@keyframes zoomIn {
+  0% {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slideLeftIn {
+  0% {
+    transform: translate(-50%, -50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(-50%);
+    opacity: 1;
+  }
+}
+
+@keyframes slideRightIn {
+  0% {
+    transform: translate(50%, -50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(-50%);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* === Introduction & Tech Section === */
+#technologies_div {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#technologies_div p {
+  color: #D0FF00;
+  font-family: 'Inter';
+  font-size: 20px;
+  font-weight: 500;
+}
+
+#introduction_div {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#tech_title {
+  margin-top: 100px;
+  font-weight: 300;
+  color: #D0FF00;
+  font-family: 'Inter';
+  font-size: 20px;
+}
+
+#introduction_description {
+  font-size: 32px;
+  font-family: 'Poppins';
+  color: #7D7F78;
+  text-align: center;
+  font-weight: 500;
+}
+
+@media (max-width: 1000px) {
+  #introduction_description{
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  #introduction_description{
+    font-size: 16px;
+  }
+
+  #tech_title{
+    font-size: 16px;
+  }
+}
+
+.highlight-start,
+.highlight-end {
+  color: white;
+  font-family: 'Poppins';
+  font-size: 32px;
+  font-weight: 500;
+}
+
+@media (max-width: 1000px) {
+  .highlight-start,
+  .highlight-end{
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .highlight-start,
+  .highlight-end{
+    font-size: 16px;
+  }
+}
+
+/* === Responsive Break Utility === */
+.responsive-break::before {
+  content: "\A";
+  white-space: pre;
+}
+
+.line_break{
+  display: block;
+}
+
+/* === Mobile Overrides === */
+@media (max-width: 768px) {
+  #left-div-image,
+  #right-div-image,
+  #dashboard-pic,
+  #finance-pic,
+  #credentials-pic {
+    display: none;
+  }
+
+  #home {
+    justify-content: center;
+    width: 100vw;
+  }
+
+  #subtitle_div {
+    justify-content: center;
+  }
+
+  #subtitle {
+    width: 100%;
+  }
+
+  #title_div{
+    width: 80%;
+  }
+
+  #title_div h1{
+    font-size: 40px;
+  }
+
+  .responsive-break::before{
+    content: "";
+    white-space: normal;
+  }
+  .line_break{
+    display: none;
+  }
+}
