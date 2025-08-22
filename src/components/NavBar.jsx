@@ -1,5 +1,6 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import "../components/NavBar.css";
+import logo from "/logo.png"
 
 function NavBar() {
   const location = useLocation();
@@ -22,7 +23,7 @@ function NavBar() {
     <div id="navbar">
       <div id="logo">
         <Link to="/">
-          <img src="/logo.png" alt="Logo" />
+          <img src={logo} alt="Logo" />
         </Link>
       </div>
 
