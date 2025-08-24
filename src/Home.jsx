@@ -8,6 +8,13 @@ import Footer from "./components/Footer";
 import RequestCV from "./components/RequestCV";
 import Testimonials from "./components/Testimonials";
 import { useLocation } from "react-router-dom";
+import phone from "../public/phone.png"
+import sarah from "/public/sarah.png"
+import Eliah from "../public/Eliah.png"
+import watch from "/watch.png"
+import dashboard from "/dashboard.png"
+import finance from "/finance.png"
+import credentials from "/credentials.png"
 
 function Home() {
     const bottomImagesRef = useRef(null);
@@ -53,8 +60,8 @@ function Home() {
 
             <div id="subtitle_div">
                 <div id="left-div-image">
-                    <img src="../../public/phone.png" id="phone" />
-                    <img src="public/sarah.png" id="sarah-name-pic" />
+                    <img src={phone} id="phone" />
+                    <img src={sarah} id="sarah-name-pic" />
                 </div>
 
                 <div id="subtitle_center_div">
@@ -69,22 +76,22 @@ function Home() {
                 </div>
 
                 <div id="right-div-image">
-                    <img src="../../public/Eliah.png" id="eliah-name-pic" />
-                    <img src="/watch.png" id="watch" />
+                    <img src={Eliah} id="eliah-name-pic" />
+                    <img src={watch} id="watch" />
                 </div>
             </div>
             
             <div id="bottom-images-div" ref={bottomImagesRef}>
                 <div className="image-wrapper" style={{ marginTop: "0px" }}>
-                    <img src="/dashboard.png" id="dashboard-pic" />
+                    <img src={dashboard} id="dashboard-pic" />
                 </div>
 
                 <div className="image-wrapper">
-                    <img id="finance-pic" src="/finance.png" alt="finance image" />
+                    <img id="finance-pic" src={finance} alt="finance image" />
                 </div>
 
                 <div className="image-wrapper" style={{ marginTop: "0px" }}>
-                    <img src="/credentials.png" id="credentials-pic" />
+                    <img src={credentials} id="credentials-pic" />
                 </div>
             </div>
 

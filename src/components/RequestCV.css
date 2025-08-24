@@ -1,80 +1,151 @@
 .request_CV_div {
-    width: 67%;
-    background: linear-gradient(to right, #161616, #151515, #0F0F0F);
-    border-radius: 26px;
-    padding: 40px 20px;
-    display: flex;
-    justify-content: center;
-    margin-top: 180px;
+  width: 67%;
+  background: linear-gradient(to right, #161616, #151515, #0F0F0F);
+  border-radius: 26px;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  margin-top: 180px;
 }
 
 .request_CV_div_container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Text (ID-based) */
+#cvTitleTop,
+#cvTitleMain {
+  color: #CCCCCC;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 50px; /* default desktop */
+  font-weight: 500;
+  text-align: center;
+}
+
+#cvSubtitle {
+  color: #7D7F78;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  width: 40%;
+  font-size: 18px;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 60px;
+}
+
+/* Form */
+.email_input {
+  width: 40%;
+  background-color: black;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  padding: 14px;
+  gap: 10px;
+  position: relative;
+  border: 1px solid transparent;
+  background-image:
+    linear-gradient(black, black),
+    linear-gradient(to right, #ffffff33, #ffffff55, #ffffff33);
+  background-origin: padding-box, border-box;
+  background-clip: padding-box, border-box;
+}
+
+.email_input input[type="email"] {
+  flex: 1;
+  border: none;
+  padding: 0 20px;
+  font-size: 16px;
+  outline: none;
+  height: 100%;
+  background-color: black;
+  color: white;
+  border-radius: 30px;
+}
+
+#submit_button {
+  border: none;
+  background-color: #D0FF00;
+  color: black;
+  padding: 12px 24px;
+  font-size: 16px;
+  cursor: pointer;
+  height: 100%;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  border-radius: 40px;
+  white-space: nowrap;
+}
+
+/* ------------------- RESPONSIVE BREAKPOINTS (large → small) ------------------- */
+
+/* Large Laptops (≤1440px) */
+@media (max-width: 1440px) {
+  #cvTitleTop,
+  #cvTitleMain { font-size: 44px; }
+  #cvSubtitle { width: 55%; font-size: 17px; }
+  .email_input { width: 55%; }
+}
+
+/* Laptops (≤1200px) */
+@media (max-width: 1200px) {
+  #cvTitleTop,
+  #cvTitleMain { font-size: 38px; }
+  #cvSubtitle { width: 65%; font-size: 16px; }
+  .email_input { width: 65%; }
+}
+
+/* Tablets (≤992px) */
+@media (max-width: 992px) {
+  #cvTitleTop,
+  #cvTitleMain { font-size: 32px; }
+  #cvSubtitle { width: 75%; font-size: 15px; }
+  .email_input { width: 75%; }
+}
+
+/* Small Tablets / Large Phones (≤768px) */
+@media (max-width: 768px) {
+  #cvTitleTop,
+  #cvTitleMain { font-size: 37px; }
+  #cvSubtitle { width: 90%; font-size: 14px; }
+  .email_input { flex-direction: column; width: 90%; padding: 12px }
+  .email_input input[type="email"] { width: 90%; font-size: 14px; padding: 10px 0px; }
+  #submit_button { width: 100%; font-size: 15px; padding: 12px; height: auto; }
+
+   .email_input input[type="email"] {
+        width: 90%;
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+  .request_CV_div_container {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 0px;
+}
 }
 
-.request_CV_div_container h1 {
-    color: #CCCCCC;
-    margin: 0;
-    font-family: 'Poppins';
-    font-size: 50px;
-    font-weight: 500;
-    
-}
-
-.request_CV_div_container p {
-    color: #7D7F78;
-    font-family: 'Inter';
-    font-weight: 500;
-    width: 40%;
-    font-size: 18px;
-    text-align: center;
-    margin-top: 30px;
-    margin-bottom: 60px;
-}
-
-.email_input {
-    width: 40%;
-    background-color: black;
-    border-radius: 30px;
+/* Small Phones (≤480px) */
+@media (max-width: 480px) {
+  #cvTitleTop,
+  #cvTitleMain { font-size: 33px; }
+  #cvSubtitle { font-size: 13px; margin-bottom: 40px; width: 90%; }
+  .email_input { width: 100%; }
+  .email_input input[type="email"] {
+        width: 90%;
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+  .request_CV_div_container {
+    width: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    padding: 14px;
-    gap: 10px;
-    position: relative;
-    border: 1px solid transparent;
-    background-image: 
-        linear-gradient(black, black),
-        linear-gradient(to right, #ffffff33, #ffffff55, #ffffff33); /* glossy streak */
-    background-origin: padding-box, border-box;
-    background-clip: padding-box, border-box;
+    gap: 5px;
 }
-
-
-.email_input input[type="email"] {
-    flex: 1;
-    border: none;
-    padding: 0 20px;
-    font-size: 16px;
-    outline: none;
-    height: 100%;
-    background-color: black;
-    color: white;
-    border-radius: 30px;
-}
-
-#submit_button {
-    border: none;
-    background-color: #D0FF00;
-    color: black;
-    padding: 12px 24px;
-    font-size: 16px;
-    cursor: pointer;
-    height: 100%;
-    font-weight: 500;
-    font-family: 'Inter';
-    border-radius: 40px;
-    white-space: nowrap;
 }

@@ -1,26 +1,25 @@
 import "../components/HeroSectionCarousel.css"
+
 function HeroSectionCarousel(){
-    return(
-        <div class="carousel-container">
-            <div class="carousel">
-                <div class="carousel-item">
-                    <img src = "/phone.png"/>
+    return (
+        <div className="carousel-container">
+            <div className="carousel">
+                <div className="carousel-item">
+                    <img src={`${import.meta.env.BASE_URL}phone.png`} alt="Phone"/>
                 </div>
-                <div class="carousel-item">
-                    <img src = "/watch.png"/>
+                <div className="carousel-item">
+                    <img src={`${import.meta.env.BASE_URL}watch.png`} alt="Watch"/>
                 </div>
-                <div class="carousel-item">
-                    <img src = "/finance.png"/>
+                <div className="carousel-item">
+                    <img src={`${import.meta.env.BASE_URL}finance.png`} alt="Finance"/>
                 </div>
-                <div class="carousel-item">
-                    <img src = "/dashboard.png"/>
+                <div className="carousel-item">
+                    <img src={`${import.meta.env.BASE_URL}dashboard.png`} alt="Dashboard"/>
                 </div>
             </div>
-
-            
         </div>
-
-    )
+    );
 }
 
-export default HeroSectionCarousel
+
+export default HeroSectionCarousel;

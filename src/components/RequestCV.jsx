@@ -31,10 +31,10 @@ function RequestCV() {
   return (
     <div className="request_CV_div" id="CV">
       <div className="request_CV_div_container">
-        <h1>Love my work?</h1>
-        <h1>Request Resume</h1>
+        <h1 id="cvTitleTop">Love my work?</h1>
+        <h1 id="cvTitleMain">Request Resume</h1>
 
-        <p>
+        <p id="cvSubtitle">
           Enter your email and have my CV instantly sent to your email in PDF
           and Word format
         </p>
@@ -50,7 +50,7 @@ function RequestCV() {
           <input type="submit" id="submit_button" value="Request" />
         </form>
 
-        {status && <p style={{ marginTop: "10px", color: "#ccc" }}>{status}</p>}
+        {status && <p id="cvStatus" style={{ marginTop: "10px", color: "#ccc" }}>{status}</p>}
       </div>
     </div>
   );

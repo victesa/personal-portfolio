@@ -19,19 +19,17 @@ function ProjectCard({ project, totalFrames = 204, animationDuration = 3500, onH
       return;
     }
 
-    const animationPath = "/animations/networq/";
+    const animationPath = project.framePath;
     if (preloadedFrames.has(animationPath)) {
       setImagesLoaded(true);
       return;
     }
 
     let loaded = 0;
-    const images = [];
     for (let i = 0; i < totalFrames; i++) {
       const img = new Image();
       const idx = String(i).padStart(6, "0");
-      img.src = `${animationPath}frame_${idx}.png`;
-      images.push(img);
+      img.src = `${animationPath}${idx}.png`; // ✅ BASE_URL included already
       img.onload = () => {
         if (++loaded === totalFrames) {
           preloadedFrames.set(animationPath, true);
@@ -39,7 +37,7 @@ function ProjectCard({ project, totalFrames = 204, animationDuration = 3500, onH
         }
       };
     }
-  }, [project.hasAnimation, totalFrames]);
+  }, [project.hasAnimation, project.framePath, totalFrames]);
 
   // Animation logic
   const startAnimation = () => {
@@ -75,10 +73,8 @@ function ProjectCard({ project, totalFrames = 204, animationDuration = 3500, onH
         linear-gradient(to bottom, transparent, #0a0a0a)
       `;
     }
-    if (project.hasAnimation) {
-      startAnimation();
-    }
-    if (onHover) onHover(); // Trigger parent’s hover callback
+    if (project.hasAnimation) startAnimation();
+    if (onHover) onHover();
   };
 
   const handleMouseLeave = () => {
@@ -90,7 +86,7 @@ function ProjectCard({ project, totalFrames = 204, animationDuration = 3500, onH
       cancelAnimationFrame(animationFrameRef.current);
       setFrameIndex(totalFrames - 1);
     }
-    if (onLeave) onLeave(); // Trigger parent’s leave callback
+    if (onLeave) onLeave();
   };
 
   return (
@@ -127,8 +123,8 @@ function ProjectCard({ project, totalFrames = 204, animationDuration = 3500, onH
             <img
               src={
                 imagesLoaded
-                  ? `/animations/networq/frame_${String(frameIndex).padStart(6, "0")}.png`
-                  : `/animations/networq/frame_${String(totalFrames - 1).padStart(6, "0")}.png`
+                  ? `${project.framePath}${String(frameIndex).padStart(6, "0")}.png`
+                  : `${project.framePath}${String(totalFrames - 1).padStart(6, "0")}.png`
               }
               alt={`Frame ${frameIndex}`}
             />
