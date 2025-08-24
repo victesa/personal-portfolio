@@ -8,7 +8,7 @@ import ContactMe from './ContactMe';
 function App() {
   return (
     <div id = "app-div">
-       <Router basename="/personal-portfolio">
+       <Router basename="/">
         <NavBar/>
         <Routes>
           <Route path="/" element={<Home/>} />
